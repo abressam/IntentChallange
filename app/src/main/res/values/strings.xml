@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Intent Challange</string>
+    <string name="share_button_text">Share</string>
+    <string name="edittext_message">Message</string>
+    <string name="birthday_card_text">Send a Birthday Message!</string>
+    <string name="from_text">From</string>
+    <string name="dear_text">Dear</string>
+    <string name="background_main_activity">Background main activity</string>
+    <string name="textview">TextView</string>
+    <string name="go_back_text">Go Back</string>
+</resources>
