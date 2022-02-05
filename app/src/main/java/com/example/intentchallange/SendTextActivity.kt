@@ -7,11 +7,12 @@ import android.widget.Button
 import android.widget.EditText
 
 class SendTextActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val shareButton: Button = findViewById(R.id.share_button)
+        val shareButton = findViewById<Button>(R.id.share_button)
         shareButton.setOnClickListener {
             shareMessage()
         }
@@ -19,19 +20,15 @@ class SendTextActivity : AppCompatActivity() {
 
     private fun shareMessage() {
 
-        val editTextMessage: EditText = findViewById(R.id.myMessage)
-        val editTextDear: EditText = findViewById(R.id.dear_id)
-        val editTextFrom: EditText = findViewById(R.id.from_id)
+        val message = findViewById<EditText>(R.id.myMessage).text.toString()
+        val dear = findViewById<EditText>(R.id.dear_id).text.toString()
+        val from = findViewById<EditText>(R.id.from_id).text.toString()
 
-        val dear = editTextDear.text.toString()
-        val from = editTextFrom.text.toString()
-        val message = editTextMessage.text.toString()
+        val birthdayCard = "Dear, $dear\n\n $message\n\n From $from."
 
         val shareIntent = Intent().apply {
             this.action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "Dear, $dear")
-            putExtra(Intent.EXTRA_TEXT, message)
-            putExtra(Intent.EXTRA_TEXT, from)
+            putExtra(Intent.EXTRA_TEXT, birthdayCard)
             this.type = "text/plain"
         }
         startActivity(shareIntent)

@@ -17,7 +17,7 @@ class ReceiveTextActivity : AppCompatActivity() {
             textView.text = text
         }
 
-        val goBackButton: Button = findViewById(R.id.button_go_back)
+        val goBackButton = findViewById<Button>(R.id.button_go_back)
         goBackButton.setOnClickListener {
             val changeActivity = Intent(this, SendTextActivity::class.java)
             startActivity(changeActivity)
